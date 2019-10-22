@@ -1,6 +1,6 @@
-CREATE DATABASE Universia
+CREATE DATABASE Faculdade
 
-USE Universia
+USE Faculdade
 
 CREATE TABLE Alunos
 (
@@ -27,7 +27,7 @@ codigodisc INT,
 anocurso int
 )
 
-INSERT GRADE (codigocurso, codigograde,codigodisc,ano)
+INSERT GRADE (codigocurso, codigograde,codigodisc,anocurso)
 VALUES (1,1,1,2019),(1,1,2,2019)
  
 CREATE TABLE DISCIPLINA
@@ -75,6 +75,6 @@ BEGIN
 	ON GRADE.codigocurso = Cursos.codcurso
 END
 
-EXEC spMatriculaAluno 'Fulano','Geografia',2019
+EXEC spMatriculaAluno 'Fulano','Economia',2019
 
 SELECT * FROM Alunos
