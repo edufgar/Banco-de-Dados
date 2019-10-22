@@ -8,7 +8,7 @@ matricula INT IDENTITY,
 nomealuno VARCHAR(20)
 )
  
-INSERT Alunos (nome) VALUES ('')
+INSERT Alunos (nomealuno) VALUES ('')
 GO 
 CREATE TABLE Cursos
 (
