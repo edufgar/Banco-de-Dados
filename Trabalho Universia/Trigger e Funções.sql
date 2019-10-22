@@ -1,19 +1,19 @@
-USE MinhaCaixa
+USE Universia
 
 --- Trigger
 
-CREATE TRIGGER trgINSERT_CLIENTE
-ON Clientes
+CREATE TRIGGER trgINSERT_Aluno
+ON Alunos
 FOR INSERT
 AS
 BEGIN
-INSERT clientes_audit 
-(ClienteCodigo,ClienteCPF,ClienteNome)
-SELECT ClienteCodigo,ClienteCPF, ClienteNome 
+INSERT alunos_audit 
+(matricula,nomealuno)
+SELECT matricula,nomealuno 
 FROM  Inserted
 END
 
---- Funções
+--- FunÃ§Ãµes
 
 CREATE FUNCTION fnRetornaAno (@data DATETIME)
 RETURNS int
