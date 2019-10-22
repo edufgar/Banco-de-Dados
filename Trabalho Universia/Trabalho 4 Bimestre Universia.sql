@@ -8,14 +8,15 @@ matricula INT IDENTITY,
 nomealuno VARCHAR(20)
 )
  
-INSERT Alunos (nomealuno) VALUES ('')
+INSERT Alunos (nomealuno) VALUES ('Doe')
 GO 
 CREATE TABLE Cursos
 (
 codcurso INT IDENTITY,
 nomecurso VARCHAR(50)
 )
-INSERT Cursos (nomecurso) VALUES ('')--1
+
+INSERT Cursos (nomecurso) VALUES ('Administração')
 SELECT @@IDENTITY
  
 CREATE TABLE GRADE
@@ -26,11 +27,8 @@ codigodisc INT,
 anocurso int
 )
 
-INSERT GRADE (codigocurso, codigograde,
-codigodisc,ano)
-VALUES 
-(1,1,1,2019),
-(1,1,2,2019)
+INSERT GRADE (codigocurso, codigograde,codigodisc,ano)
+VALUES (1,1,1,2019),(1,1,2,2019)
  
 CREATE TABLE DISCIPLINA
 (
@@ -38,13 +36,14 @@ codigodisc INT IDENTITY,
 nomedisc VARCHAR(20)
 )
 
-INSERT DISCIPLINA (nomedisc) VALUES ('')
+INSERT DISCIPLINA (nomedisc) VALUES ('Economia')
+
 DECLARE @cod_disc INT 
 SET @cod_disc = (SELECT @@IDENTITY)
 SELECT @cod_disc
 
 
-INSERT DISCIPLINA (nomedisc) VALUES ('')
+INSERT DISCIPLINA (nomedisc) VALUES ('Filosofia')
 SELECT @@IDENTITY
 
 SELECT * FROM Alunos
@@ -76,7 +75,6 @@ BEGIN
 	ON GRADE.codigocurso = Cursos.codcurso
 END
 
-EXEC spMatriculaAluno '','',2019
+EXEC spMatriculaAluno 'Fulano','Geografia',2019
 
 SELECT * FROM Alunos
-
