@@ -25,7 +25,3 @@ AS
       RETURN @ano
 
 END
-
-
-
-
