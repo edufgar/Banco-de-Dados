@@ -1,6 +1,8 @@
-CREATE DATABASE Faculdade
+CREATE DATABASE Universia
 
-USE Faculdade
+USE Universia
+
+-- Criando as Tabelas e Inserindo Valores
 
 CREATE TABLE Alunos
 (
@@ -58,6 +60,8 @@ anocurso INT,
 codigodisc int
 )
 
+-- Criando e Executando a Procedure
+
 CREATE PROCEDURE spMatriculaAluno
 @nomealuno varchar(20),
 @curso varchar(20),
@@ -75,6 +79,8 @@ BEGIN
 	ON GRADE.codigocurso = Cursos.codcurso
 END
 
-EXEC spMatriculaAluno 'Fulano','Economia',2019
+EXEC spMatriculaAluno 'Fulano','Administração',2019
+
+-- Exibir Resultados
 
 SELECT * FROM Alunos
